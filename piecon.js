@@ -176,6 +176,17 @@
             setFaviconTag(currentFavicon);
         }
     };
+    
+    Piecon.show = function() {
+    };
+    
+    Piecon.hide = function() {
+        if (!originalFavicon) {
+            var tag = getFaviconTag();
+            originalFavicon = tag ? tag.getAttribute('href') : '/favicon.ico';
+        }
+        setFaviconTag(originalFavicon);
+    };
 
     Piecon.setOptions(defaults);
     window.Piecon = Piecon;
